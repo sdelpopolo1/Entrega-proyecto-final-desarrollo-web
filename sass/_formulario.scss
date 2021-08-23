@@ -1,0 +1,159 @@
+.box {
+	font-family: 'Playfair Display', serif;
+	height: 550px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.form_title {
+	text-align: center;
+	font-weight: 500;
+	font-family: 'Playfair Display SC', serif;
+	color: #B4846C;
+}
+.form_paragraph {
+	text-align: center;
+	padding-top: 7px;
+}
+form {
+	background: #fff;
+	padding: 40px 0;
+	width: 450px;
+	.grupo {
+		position: relative;
+		margin: 40px;
+	}
+}
+.form {
+	width: 100%;
+	margin: auto;
+}
+input {
+	background: none;
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid;
+	&:focus {
+		outline: none;
+	}
+	&:focus~label {
+		top: -14px;
+		font-size: 12px;
+		color: #B4846C;
+	}
+	&:valid~label {
+		top: -14px;
+		font-size: 12px;
+		color: #B4846C;
+	}
+	&:focus~.barra {
+		&::before {
+			width: 100%;
+		}
+	}
+}
+label {
+	color: black;
+	font-size: 16px;
+	position: absolute;
+	left: 5px;
+	top: 10px;
+	transition: 0.5s ease all;
+	pointer-events: none;
+}
+.barra {
+	position: relative;
+	display: block;
+	width: 100%;
+	&::before {
+		content: "";
+		height: 2px;
+		width: 0%;
+		bottom: 0;
+		position: absolute;
+		background: #B4846C;
+		transition: 0.3s ease width;
+		left: 0;
+	}
+}
+.form_submit {
+	font-family: 'Playfair Display', serif;
+	border: none;
+	display: block;
+	width: 80%;
+	margin: 10px auto;
+	height: 45px;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #B4846C;
+	border-radius: 5px;
+	color: white;
+}
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	overflow: auto;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.452);
+}
+
+
+.contenido-modal {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	width: 30%;
+	box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+	animation-name: modal;
+	animation-duration: 1s;
+}
+
+@keyframes modal{
+    from{top:-330px; opacity:0;}
+    to{top:0; opacity:1;}
+    }
+
+.close {
+	color: #f2f2f2;
+	font-size: 30px;
+	font-weight: bold;
+	&:hover {
+		color: pink;
+		text-decoration: none;
+		cursor: pointer;
+	}
+}
+.modal-header {
+	padding: 8px 16px;
+	background-color: white;
+}
+.modal-body {
+	padding: 20px 16px;
+}
+
+
+
+@media screen and (max-width:500px) {
+	form {
+		width: 80%;
+	}
+	.textos {
+		padding: 50px;
+	}
+}
+@media screen and (max-width:900px) {
+	.contenido-modal {
+		width: 70%;
+	}
+	.textos {
+		padding: 150px;
+	}
+}
